@@ -14,21 +14,21 @@ const GroupMaker = ({
   // Function to create and return a ref
 
   // Create a 2D array of refs
-  // const [textboxRefs, setTextboxRefs] = useState([]);
+  const [textboxRefs, setTextboxRefs] = useState([]);
   // const [fgroup, setFgroup] = useState(-1);
 
   // useEffect to focus on the last textbox after the component mounts
-  // useEffect(() => {
-  //   setTextboxRefs(groups.map((group) => group.map(() => null)));
-  //   console.log(groups);
-  //   console.log(textboxRefs);
-  //   if (fgroup < 0 || textboxRefs.length < groups.length) return;
-  //   // Check if the last ref is defined before calling focus
-  //   const lastRef = textboxRefs[fgroup][textboxRefs[fgroup].length - 1];
-  //   if (lastRef.current) {
-  //     lastRef.current.focus();
-  //   }
-  // }, [groups]); // Include textboxes in the dependency array if it might change
+  useEffect(() => {
+    setTextboxRefs(groups.map(() => createRef()));
+    //   console.log(groups);
+    //   console.log(textboxRefs);
+    //   if (fgroup < 0 || textboxRefs.length < groups.length) return;
+    //   // Check if the last ref is defined before calling focus
+    //   const lastRef = textboxRefs[fgroup][textboxRefs[fgroup].length - 1];
+    //   if (lastRef.current) {
+    //     lastRef.current.focus();
+    //   }
+  }, [groups]); // Include textboxes in the dependency array if it might change
 
   return (
     <div style={{ marginBottom: "200px" }}>
@@ -139,7 +139,7 @@ const GroupMaker = ({
           bottom: "20px",
           left: "10px",
         }}
-        text="Reset gropus"
+        text="Reset groups"
         onClick={() => {
           setGroups([]);
         }}

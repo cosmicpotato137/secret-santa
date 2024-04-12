@@ -11,7 +11,7 @@ for %%i in (%*) do (
 REM Launch npm run build command in a separate window if skip_build is not set
 if %skip_build%==0 (
   @echo BUILDING ...
-  start /wait cmd /c "npm run build"
+  start /wait cmd /c "npm run deploy"
 )
 
 REM Change to the current directory
